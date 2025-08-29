@@ -101,7 +101,7 @@
       align-items: center;
       justify-content: center;
       background: var(--accent-primary);
-      color: white;
+      color: white !important;
       border: none;
       padding: 0.8rem 1.8rem;
       border-radius: 30px;
@@ -110,6 +110,8 @@
       box-shadow: 0 4px 15px rgba(73, 134, 175, 0.3);
       line-height: 20px;
       font-size: 18px;
+      user-select: none;
+      text-decoration: none;
     }
 
     .cta-button:hover {
@@ -152,9 +154,51 @@
     .cta-button-right-icon:hover {
       background-color: rgba(0, 0, 0, 0.1);
     }
-    
-    .cta-button-right-icon:hover .icon {
+
+    .cta-button-right-icon:hover .icon-down {
       transform: rotate(-180deg);
+    }
+
+    .apple-select-warap {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 180px;
+    }
+
+    .cta-button-right-icon:hover .apple-select-warap {
+      display: block;
+    }
+
+    .apple-select-warap-bg {
+      padding: 10px 0;
+      margin-top: 10px;
+      background: var(--accent-hover);
+      border-radius: 4px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all var(--transition-speed);
+    }
+
+    .apple-select-item {
+      padding: 0 10px;
+      color: white;
+    }
+
+    .apple-select-item-inner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      user-select: none;
+      color: white !important;
+      text-decoration: none;
+    }
+
+    .apple-select-item-inner:hover {
+      background-color: rgba(0, 0, 0, 0.15);
     }
 
     /* 主横幅区域 */
@@ -441,21 +485,37 @@
       <h1>掌控你的网络请求</h1>
       <p>Listen 是前端开发和测试的终极工具，提供请求修改、响应修改、API Mock 等功能，助你高效调试网络请求。</p>
       <div class="hero-buttons">
-        <div class="cta-button">
-          <div class="cta-button-left-icon">
+        <a class="cta-button" href="#windows-download">
+          <span class="cta-button-left-icon">
             <i class="icon icon-windows"></i>
-          </div>
+          </span>
           <span>Windows</span>
-        </div>
+        </a>
         <span style="width:50px;"></span>
-        <div class="cta-button">
-          <div class="cta-button-left-icon">
+        <div class="cta-button" href="#macos-download">
+          <span class="cta-button-left-icon">
             <i class="icon icon-macos"></i>
-          </div>
-          <span>Macos(Apple)</span>
-          <div class="cta-button-right-icon">
+          </span>
+          <span>Macos (Apple)</span>
+          <span class="cta-button-right-icon">
             <i class="icon icon-down"></i>
-          </div>
+            <div class="apple-select-warap">
+              <div class="apple-select-warap-bg">
+                <div class="apple-select-item">
+                  <a class="apple-select-item-inner" href="#macos-download1">
+                    <i class="icon icon-intel"></i>
+                    <span>Intel</span>
+                  </a>
+                </div>
+                <div class="apple-select-item">
+                  <a class="apple-select-item-inner" href="#macos-download2">
+                    <i class="icon icon-macos"></i>
+                    <span>Apple silicon</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </span>
         </div>
       </div>
     </div>

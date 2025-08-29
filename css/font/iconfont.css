@@ -1,6 +1,6 @@
 @font-face {
   font-family: "icon"; /* Project id 4620628 */
-  src: url('iconfont.woff2?t=1756396189065') format('woff2');
+  src: url('iconfont.woff2?t=1756454948684') format('woff2');
 }
 
 .icon {
@@ -9,6 +9,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-intel:before {
+  content: "\e610";
 }
 
 .icon-macos:before {
