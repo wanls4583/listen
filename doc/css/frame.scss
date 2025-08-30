@@ -64,14 +64,28 @@ blockquote {
     *zoom: 1;
 
     .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         float: left;
         height: 100%;
-        width: 160px;
-        _width: 200px;
+        // width: 160px;
+        // _width: 200px;
         padding: 0 20px;
         line-height: 60px;
         font-size: 26px;
-        color: #fff;
+        color: #fff !important;
+        text-decoration: none;
+    }
+
+    .logo-icon {
+        width: 40px;
+        margin-right: 10px;
+    }
+
+    .app-name {
+        font-weight: bold;
+        font-size: 20px;
     }
 
     .jy-header-right {

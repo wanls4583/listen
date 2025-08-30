@@ -97,13 +97,14 @@
 
     .cta-button {
       position: relative;
+      height: 45px;
+      min-width: 120px;
       display: flex;
       align-items: center;
       justify-content: center;
       background: var(--accent-primary);
       color: white !important;
       border: none;
-      padding: 0.8rem 1.8rem;
       border-radius: 30px;
       cursor: pointer;
       transition: all var(--transition-speed);
@@ -111,6 +112,17 @@
       line-height: 20px;
       font-size: 18px;
       user-select: none;
+      text-decoration: none;
+    }
+
+    .cta-button-a {
+      flex-grow: 1;
+      height: 100%;
+      color: white !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
       text-decoration: none;
     }
 
@@ -127,6 +139,7 @@
       left: 20px;
       display: flex;
       align-items: center;
+      pointer-events: none;
     }
 
     .cta-button-right-icon {
@@ -205,7 +218,7 @@
     .hero {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-around;
       min-height: 85vh;
       padding: 3rem 5% 6rem;
       background:
@@ -234,7 +247,7 @@
       flex-grow: 1;
       display: flex;
       justify-content: flex-end;
-      max-width: 1000px;
+      max-width: 1080px;
     }
 
     .hero-image img {
@@ -465,10 +478,10 @@
 <body>
   <!-- 导航栏 -->
   <nav class="navbar">
-    <div class="logo">
+    <a class="logo">
       <img src="favicon.ico" class="logo-icon">
       <span class="app-name">Listen</span>
-    </div>
+    </a>
     <!-- <div class="nav-links">
       <a href="#features">功能</a>
       <a href="#use-cases">应用场景</a>
@@ -476,7 +489,7 @@
       <a href="#docs">文档</a>
       <a href="#blog">博客</a>
     </div> -->
-    <div class="cta-button">开始使用</div>
+    <a class="cta-button" href="https://lisong.hn.cn/doc">开始使用</a>
   </nav>
 
   <!-- 主横幅 -->
@@ -485,30 +498,33 @@
       <h1>掌控你的网络请求</h1>
       <p>Listen 是前端开发和测试的终极工具，提供请求修改、响应修改、API Mock 等功能，助你高效调试网络请求。</p>
       <div class="hero-buttons">
-        <a class="cta-button" href="#windows-download">
+        <a class="cta-button" href="http://cdn.lisong.hn.cn/updates/win/listen-1.0.0 Setup.exe">
           <span class="cta-button-left-icon">
             <i class="icon icon-windows"></i>
           </span>
           <span>Windows</span>
         </a>
         <span style="width:50px;"></span>
-        <div class="cta-button" href="#macos-download">
+        <div class="cta-button">
           <span class="cta-button-left-icon">
             <i class="icon icon-macos"></i>
           </span>
-          <span>Macos (Apple)</span>
+          <a class="cta-button-a"
+            href="http://cdn.lisong.hn.cn/updates/darwin/arm64/listen-darwin-arm64-1.0.0.zip">Macos (Apple)</a>
           <span class="cta-button-right-icon">
             <i class="icon icon-down"></i>
             <div class="apple-select-warap">
               <div class="apple-select-warap-bg">
                 <div class="apple-select-item">
-                  <a class="apple-select-item-inner" href="#macos-download1">
+                  <a class="apple-select-item-inner"
+                    href="http://cdn.lisong.hn.cn/updates/darwin/x64/listen-darwin-x64-1.0.0.zip">
                     <i class="icon icon-intel"></i>
                     <span>Intel</span>
                   </a>
                 </div>
                 <div class="apple-select-item">
-                  <a class="apple-select-item-inner" href="#macos-download2">
+                  <a class="apple-select-item-inner"
+                    href="http://cdn.lisong.hn.cn/updates/darwin/arm64/listen-darwin-arm64-1.0.0.zip">
                     <i class="icon icon-macos"></i>
                     <span>Apple silicon</span>
                   </a>
@@ -520,8 +536,7 @@
       </div>
     </div>
     <div class="hero-image">
-      <img src="https://blog.lisong.hn.cn/listen-doc/img/home/%E8%AF%B7%E6%B1%82%E4%BB%A3%E7%90%86.png"
-        style="width:100%;">
+      <img src="img/banner.png" style="width:100%;">
     </div>
   </section>
 
@@ -631,10 +646,14 @@
       </div>
     </div>
 
-    <div class="copyright">
-      &copy; 2025 Requestly Inc. All rights reserved.
-    </div>
+    <!-- <div class="copyright">
+      &copy; 2025 Listen Inc. All rights reserved. 湘ICP备20012536号-1
+    </div> -->
   </footer>
+
+  <div style="text-align:center;font-size:0.9rem;color:var(--text-secondary);padding:10px 0;">
+    &copy; 2025 Listen Inc. All rights reserved. 湘ICP备20012536号-1
+  </div>
 </body>
 
 </html>
