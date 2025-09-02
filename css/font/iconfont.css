@@ -1,6 +1,6 @@
 @font-face {
   font-family: "icon"; /* Project id 4620628 */
-  src: url('iconfont.woff2?t=1756454948684') format('woff2');
+  src: url('iconfont.woff2?t=1756826640101') format('woff2');
 }
 
 .icon {
@@ -11,16 +11,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-windows:before {
+  content: "\e882";
+}
+
+.icon-github:before {
+  content: "\e85a";
+}
+
 .icon-intel:before {
   content: "\e610";
 }
 
 .icon-macos:before {
   content: "\e60b";
-}
-
-.icon-windows:before {
-  content: "\e668";
 }
 
 .icon-favorite:before {
