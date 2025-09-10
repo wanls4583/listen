@@ -31,7 +31,7 @@
 
 ## 使用
 
-[**`使用文档`**](https://lisong.hn.cn/)
+[**`使用文档`**](https://listen-proxy.com/)
 
 ## 历史版本
 
