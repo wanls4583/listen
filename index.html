@@ -129,13 +129,8 @@
     }
 
     .cta-button-a {
-      flex-grow: 1;
-      height: 100%;
+      white-space: nowrap;
       color: white !important;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 30px;
       text-decoration: none;
     }
 
@@ -146,13 +141,7 @@
     }
 
     .cta-button-left-icon {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 20px;
-      display: flex;
-      align-items: center;
-      pointer-events: none;
+      margin-right: 10px;
     }
 
     .cta-button-right-icon {
@@ -253,8 +242,8 @@
     }
 
     .hero-buttons .cta-button {
-      flex-grow: 1;
-      max-width: 250px;
+      display: flex;
+      justify-content: center;
     }
 
     .hero-image {
@@ -516,14 +505,15 @@
       <h1>掌控你的网络请求</h1>
       <p>Listen 是前端开发和测试的终极工具，提供请求修改、响应修改、API Mock 等功能，助你高效调试网络请求。</p>
       <div class="hero-buttons">
-        <a class="cta-button" href="https://cdn.listen-proxy.com/updates/win/listen-1.0.0 Setup.exe">
+        <a class="cta-button" style="width:160px;min-width:140px;"
+          href="https://cdn.listen-proxy.com/updates/win/listen-1.0.0 Setup.exe">
           <span class="cta-button-left-icon">
             <i class="icon icon-windows"></i>
           </span>
           <span>Windows</span>
         </a>
         <span style="width:50px;"></span>
-        <div class="cta-button">
+        <div class="cta-button" style="width:220px;min-width:210px;padding-right:45px;justify-content:flex-end;">
           <span class="cta-button-left-icon">
             <i class="icon icon-macos"></i>
           </span>
