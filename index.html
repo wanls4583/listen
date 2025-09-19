@@ -279,7 +279,7 @@
 
     /* 功能卡片 */
     .features {
-      padding: 5rem 5%;
+      padding: 4rem 5%;
       background-color: var(--bg-primary);
     }
 
@@ -297,12 +297,17 @@
     }
 
     .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      /* display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem; */
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4rem;
     }
 
     .feature-card {
+      width: 350px;
+      flex-grow: 1;
       background: var(--bg-card);
       border-radius: var(--border-radius);
       padding: 2.5rem;
@@ -343,6 +348,58 @@
     .feature-card p {
       color: var(--text-secondary);
       line-height: 1.7;
+    }
+
+    /* 详情介绍 */
+    .desc-wrap {
+      padding: 3rem 0;
+      background: radial-gradient(circle at 80% 20%, rgba(17, 75, 109, 0.3) 0%, transparent 40%),
+        linear-gradient(to bottom right, #0c0e15, #141824);
+    }
+
+    .desc-wrap-item {
+      padding: 3rem 2.5vw;
+      display: flex;
+      justify-content: center;
+    }
+
+    .desc-item-reverse {
+      flex-direction: row-reverse;
+    }
+
+    .desc-title-wrap {
+      max-width: 450px;
+      flex-shrink: 0;
+      margin: 1rem 2.5vw 20px 2.5vw;
+    }
+
+    .desc-title {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .desc-title .icon {
+      font-size: 1.8rem;
+      margin-right: 10px;
+      color: var(--accent-primary);
+    }
+
+    .desc-wrap .desc {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+    }
+
+    .desc-img-wrap {
+      max-width: 850px;
+      flex-grow: 1;
+      margin: 0 2.5vw;
+    }
+
+    .desc-img-wrap img {
+      width: 100%;
     }
 
     /* 使用场景部分 */
@@ -442,10 +499,17 @@
 
     .copyright {
       text-align: center;
-      padding-top: 2.5rem;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       color: var(--text-secondary);
       font-size: 0.9rem;
+      padding: 10px 0;
+    }
+
+    @media (max-width: 1230px) {
+      .desc-wrap-item {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
     }
 
     /* 响应式设计 */
@@ -477,6 +541,10 @@
 
       .cases-container {
         grid-template-columns: 1fr;
+      }
+
+      .copyright {
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -559,10 +627,34 @@
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">
+          <i class="icon icon-gateway"></i>
+        </div>
+        <h3>网关</h3>
+        <p>阻止请求发送到服务器或阻止响应返回给客户端。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="icon icon-mirror"></i>
+        </div>
+        <h3>镜像</h3>
+        <p>将请求的域名替换为指定的域名，效果类似修改本地hosts文件。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="icon icon-map"></i>
+        </div>
+        <h3>映射</h3>
+        <p>将请求的URL会替换为指定的本地文件路径或者目录。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
           <i class="icon icon-pen"></i>
         </div>
         <h3>重写</h3>
-        <p>使用事先创建好的规则在请求和响应进行自动化修改和替换。</p>
+        <p>使用事先创建好的规则对请求和响应进行自动化修改和替换。</p>
       </div>
 
       <div class="feature-card">
@@ -578,7 +670,7 @@
           <i class="icon icon-script"></i>
         </div>
         <h3>脚本</h3>
-        <p>利用JavaScript代码对请求和响应进行拦截，从而实现对请求和响应进行更加灵活的修改。</p>
+        <p>编写JavaScript代码对请求和响应进行拦截，从而实现对请求和响应进行更加灵活的修改。</p>
       </div>
 
       <div class="feature-card">
@@ -586,7 +678,95 @@
           <i class="icon icon-send"></i>
         </div>
         <h3>API Mocking</h3>
-        <p>模拟API响应数据，无需后端配合即可测试前端各种状态。</p>
+        <p>构造任意的HTTP/HTTPS请求，便于测试接口。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 详情介绍 -->
+  <section class="desc-wrap">
+    <div class="desc-wrap-item">
+      <div class="desc-title-wrap">
+        <div class="desc-title">
+          <i class="icon icon-gateway"></i>
+          <span>网关</span>
+        </div>
+        <span class="desc">网关功能可以对请求进行屏蔽和挂起，阻止请求发送到服务器，从而实现对某些请求的过滤和控制。</span>
+      </div>
+      <div class="desc-img-wrap">
+        <img src="doc/img/gateway/网关5.png" alt="">
+      </div>
+    </div>
+    <div class="desc-wrap-item desc-item-reverse">
+      <div class="desc-title-wrap">
+        <div class="desc-title">
+          <i class="icon icon-mirror"></i>
+          <span>镜像</span>
+        </div>
+        <span class="desc">镜像功能可以将请求的域名替换为指定的域名，从而实现请求的重定向。效果类似于修改hosts文件，但更为方便快捷。</span>
+      </div>
+      <div class="desc-img-wrap">
+        <img src="doc/img/gateway/网关5.png" alt="">
+      </div>
+    </div>
+    <div class="desc-wrap-item">
+      <div class="desc-title-wrap">
+        <div class="desc-title">
+          <i class="icon icon-map"></i>
+          <span>映射</span>
+        </div>
+        <span class="desc">映射功能可以将请求的URL会替换为指定的本地文件路径或者目录，从而实现对单个文件或整个网站的映射，方便前端开发调试。</span>
+      </div>
+      <div class="desc-img-wrap">
+        <img src="doc/img/map/映射5.png" alt="">
+      </div>
+    </div>
+    <div class="desc-wrap-item desc-item-reverse">
+      <div class="desc-title-wrap">
+        <div class="desc-title">
+          <i class="icon icon-pen"></i>
+          <span>重写</span>
+        </div>
+        <span class="desc">重写功能可以使用事先创建好的规则在请求发送到服务器之前对请求进行修改，也可以在响应返回给客户端之前对响应进行修改，从而实现对请求和响应的重写。</span>
+      </div>
+      <div class="desc-img-wrap">
+        <img src="doc/img/rewrite/重写5.png" alt="">
+      </div>
+    </div>
+    <div class="desc-wrap-item">
+      <div class="desc-title-wrap">
+        <div class="desc-title">
+          <i class="icon icon-bug"></i>
+          <span>断点</span>
+        </div>
+        <span class="desc">断点功能可以在请求发送到服务器之前或响应返回给客户端之前暂停请求，从而实现对请求和响应的手动检查和修改。</span>
+      </div>
+      <div class="desc-img-wrap">
+        <img src="doc/img/break/断点5.png" alt="">
+      </div>
+    </div>
+    <div class="desc-wrap-item desc-item-reverse">
+      <div class="desc-title-wrap">
+        <div class="desc-title">
+          <i class="icon icon-script"></i>
+          <span>脚本</span>
+        </div>
+        <span class="desc">脚本功能可以通过自定义JavaScript代码来修改请求和响应，从而实现对请求和响应的灵活控制和处理。</span>
+      </div>
+      <div class="desc-img-wrap">
+        <img src="doc/img/script/脚本5.png" alt="">
+      </div>
+    </div>
+    <div class="desc-wrap-item">
+      <div class="desc-title-wrap">
+        <div class="desc-title">
+          <i class="icon icon-send"></i>
+          <span>API Mocking</span>
+        </div>
+        <span class="desc">请求模拟可以构造任意的 HTTP/HTTPS 请求（URL、Method、Header、Body），用来测试API接口，同时还支持API集合存储。</span>
+      </div>
+      <div class="desc-img-wrap">
+        <img src="doc/img/home/请求模拟.png" alt="">
       </div>
     </div>
   </section>
@@ -662,7 +842,7 @@
     </div> -->
   </footer>
 
-  <div style="text-align:center;font-size:0.9rem;color:var(--text-secondary);padding:10px 0;">
+  <div class="copyright">
     &copy; 2025 Listen Inc. All rights reserved. 湘ICP备20012536号-2
   </div>
 </body>
