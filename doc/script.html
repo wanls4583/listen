@@ -57,10 +57,10 @@
       <div class="jy-field-box">
         脚本里可以定义两个方法：
         <br />
-        <span style="font-weight: bold;">onHttpRequest({header, body, bodyType, url, host, port, cookies})：</span>
+        <span style="font-weight: bold;">onHttpRequest({header, body, bodyType, url, cookies})：</span>
         在请求发送到服务器之前调用，返回的{header, body}为修改后的请求头和请求体。
         <br />
-        <span style="font-weight: bold;">onHttpResponse({header, body, bodyType, url, host, port, cookies})：</span>
+        <span style="font-weight: bold;">onHttpResponse({header, body, bodyType, url, cookies})：</span>
         在响应返回给客户端之前调用，返回的{header, body}为修改后的响应头头和响应体。
         <br />
         <br />
@@ -74,11 +74,7 @@
         <br />
         <span style="font-weight: bold;">url：</span>请求的完整URL地址。
         <br />
-        <span style="font-weight: bold;">host：</span>请求的主机名。
-        <br />
-        <span style="font-weight: bold;">port：</span>请求的端口号。
-        <br />
-        <span style="font-weight: bold;">cookies：</span>请求的Cookie信息，为一个对象。
+        <span style="font-weight: bold;">cookies：</span>请求头或响应头的Cookie信息，为一个对象。
         <br />
         <br />
         例：下面的脚本代码会在请求发送到服务器之前添加一个自定义的请求头"test_add_req_header: req"，并且把请求体替换成“request
